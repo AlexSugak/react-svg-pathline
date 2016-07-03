@@ -5,7 +5,7 @@ import {PathLine} from '../index'
 export const App = React.createClass({
     render: function(){
         return (
-            <div>
+            <div style={{paddingLeft:'100px'}}>
                 <svg width="300" height="300" style={{paddingTop: '10px'}}>
                     <path 
                         d="M 0 0 L 125 0 L 125 100 L 125 125 L 250 125" 
