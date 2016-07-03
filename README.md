@@ -10,9 +10,38 @@ This component helps with rendering SVG path by generating correct SVG data from
 
 So instead of this:
 
+```html
+    <svg>
+        <path 
+            d="M 0 0 L 125 0 L 125 100 L 125 125 L 250 125" 
+            stroke="red" 
+            strokeWidth="3"
+            fill="none" />
+    </svg>
+```
+
 ![polyline](https://cloud.githubusercontent.com/assets/2222587/16547319/27903e50-4172-11e6-86b6-4c4e3d3d6484.png)
 
 You get this:
+
+```javascript
+import React from 'react'
+import {PathLine} from 'react-svg-pathline'
+
+export class MyComponent extends React.Component {
+  render() (
+    <svg>
+        <PathLine 
+            points={[{x:0, y:0}, {x:125, y: 0}, {x:125, y:125}, {x:250, y:125}]} 
+            stroke="red" 
+            strokeWidth="3"
+            fill="none"
+            r={0.1}
+            />
+    </svg>
+  )
+}
+```
 
 ![pathline](https://cloud.githubusercontent.com/assets/2222587/16547326/5a1f4c80-4172-11e6-9892-6dbd9c6f27f1.png)
 
@@ -24,7 +53,7 @@ Requires [nodejs](http://nodejs.org/).
 $ npm install react-svg-pathline
 ```
 
-## Example
+## Live Example
 
 `npm i && npm i react react-dom && npm start`
 
