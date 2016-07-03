@@ -55,6 +55,8 @@ $ npm install react-svg-pathline
 
 ## Live Example
 
-`npm i && npm i react react-dom && npm start`
+```sh
+$ npm i && npm i react react-dom && npm start
+```
 
 Open a browser at localhost:8080
