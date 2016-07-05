@@ -1,6 +1,6 @@
 {
   "name": "react-svg-pathline",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "React component for drawing SVG path through set of points, rendering straight lines where possible and smooth corners in other cases",
   "main": "index.js",
   "scripts": {
