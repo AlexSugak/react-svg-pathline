@@ -45,3 +45,8 @@ export const PathLine = React.createClass({
         )
     }
 })
+
+PathLine.propTypes = { 
+  points: React.PropTypes.array.isRequired, 
+  r: React.PropTypes.number.isRequired
+}
