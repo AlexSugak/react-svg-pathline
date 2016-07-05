@@ -13,42 +13,35 @@ const moveTo = (b, a, r) => {
 
 export const PathLine = React.createClass({
     render: function(){
-        const r = this.props.r;
-        const path = this.props
-                            .points
-                            .slice(1)
-                            .reduce((acc, p, i, points) => { 
-                                        let next = points[i + 1];
-                                        let prev = acc[acc.length - 1];
-                                        
-                                        if (next && !isCollinear(prev.point, p, next)) {
-                                            let before = moveTo(prev.point, p, r);
-                                            let after = moveTo(next, p, r);
-                                            return acc.concat({
-                                                point:p,
-                                                s:`L ${before.x} ${before.y} S ${p.x} ${p.y} ${after.x} ${after.y} `
-                                            })
-                                        } else { 
-                                            return acc.concat({
-                                                point:p,
-                                                s:`L ${p.x} ${p.y} `
-                                            })
-                                        };
-                                    }
-                                   , [{
-                                       point: this.props.points[0], 
-                                       s: `M ${this.props.points[0].x} ${this.props.points[0].y} `
-                                   }])
-                            .map(p => p.s)
-                            .join();
+        let {points, r, ...other} = this.props;
+        const path = points
+                        .slice(1)
+                        .reduce((acc, p, i, points) => { 
+                                    let next = points[i + 1];
+                                    let prev = acc[acc.length - 1];
+                                    
+                                    if (next && !isCollinear(prev.point, p, next)) {
+                                        let before = moveTo(prev.point, p, r);
+                                        let after = moveTo(next, p, r);
+                                        return acc.concat({
+                                            point:p,
+                                            s:`L ${before.x} ${before.y} S ${p.x} ${p.y} ${after.x} ${after.y} `
+                                        })
+                                    } else { 
+                                        return acc.concat({
+                                            point:p,
+                                            s:`L ${p.x} ${p.y} `
+                                        })
+                                    };
+                                }
+                                , [{
+                                    point: this.props.points[0], 
+                                    s: `M ${this.props.points[0].x} ${this.props.points[0].y} `
+                                }])
+                        .map(p => p.s)
+                        .join();
         return (
-            <path
-                d={path}
-                stroke={this.props.stroke}
-                strokeWidth={this.props.strokeWidth}
-                strokeDasharray={this.props.strokeDasharray}
-                fill={this.props.fill}
-                />
+            <path d={path} {...other} />
         )
     }
 })
