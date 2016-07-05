@@ -4,11 +4,11 @@ const isCollinear = (p1, p2, p3) => {
     return (p1.y - p2.y) * (p1.x - p3.x) == (p1.y - p3.y) * (p1.x - p2.x);
 }
 
-const moveTo = (target, current, r) => {
-    return {
-        x: current.x - (current.x - target.x) * r,
-        y: current.y - (current.y - target.y) * r
-    };
+const moveTo = (b, a, r) => {
+    const vector = {x: b.x - a.x, y: b.y - a.y};
+    const length = Math.sqrt((vector.x * vector.x) + (vector.y * vector.y));
+    const unitVector =  {x: vector.x / length, y: vector.y / length};
+    return {x: a.x + unitVector.x * r, y: a.y + unitVector.y * r};
 }
 
 export const PathLine = React.createClass({

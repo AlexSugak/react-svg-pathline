@@ -36,7 +36,7 @@ export class MyComponent extends React.Component {
             stroke="red" 
             strokeWidth="3"
             fill="none"
-            r={0.1}
+            r={10}
             />
     </svg>
   )

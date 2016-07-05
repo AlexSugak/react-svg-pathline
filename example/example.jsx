@@ -16,11 +16,11 @@ export const App = React.createClass({
                 
                 <svg width="300" height="300" style={{paddingTop: '10px'}}>
                     <PathLine 
-                        points={[{x:0, y:0}, {x:125, y: 0}, {x:125, y:125}, {x:250, y:125}]} 
+                        points={[{x:0, y:0}, {x:125, y: 0}, {x:125, y:125}, {x:450, y:125}]} 
                         stroke="red" 
                         strokeWidth="3"
                         fill="none"
-                        r={0.1}
+                        r={10}
                         />
                 </svg>
             </div>
