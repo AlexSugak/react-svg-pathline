@@ -46,6 +46,7 @@ export const PathLine = React.createClass({
                 d={path}
                 stroke={this.props.stroke}
                 strokeWidth={this.props.strokeWidth}
+                strokeDasharray={this.props.strokeDasharray}
                 fill={this.props.fill}
                 />
         )
