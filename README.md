@@ -13,7 +13,7 @@ So instead of this:
 ```html
     <svg>
         <polyline 
-            points="0,0 125,0 125,100 125,125 250,125"  
+            points="0,0 125,0 125,125 250,125"  
             stroke="red" 
             strokeWidth="3"
             fill="none" />
