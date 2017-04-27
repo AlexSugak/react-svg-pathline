@@ -12,8 +12,7 @@ const moveTo = (b, a, r) => {
     return {x: a.x + unitVector.x * r, y: a.y + unitVector.y * r};
 }
 
-export const PathLine = () => {
-    let {points, r, ...other} = this.props;
+export const PathLine = ({ points, r, ...other }) => {
     const path = points
                     .slice(1)
                     .reduce((acc, p, i, points) => {
@@ -35,8 +34,8 @@ export const PathLine = () => {
                                 };
                             }
                             , [{
-                                point: this.props.points[0],
-                                s: `M ${this.props.points[0].x} ${this.props.points[0].y} `
+                                point: points[0],
+                                s: `M ${points[0].x} ${points[0].y} `
                             }])
                     .map(p => p.s)
                     .join();
