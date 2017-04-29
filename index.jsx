@@ -38,7 +38,7 @@ export const PathLine = ({ points, r, ...other }) => {
                                 s: `M ${points[0].x} ${points[0].y} `
                             }])
                     .map(p => p.s)
-                    .join();
+                    .join('');
     return (
         <path d={path} {...other} />
     )
