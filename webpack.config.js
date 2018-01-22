@@ -3,22 +3,21 @@ var path = require('path');
 
 module.exports = {
   entry: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './example/example.jsx'
+    './example/app.jsx'
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'react-hot!babel'
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: [
+          'babel-loader',
+        ],
+        exclude: /node_modules/,
+      },
+    ],
   },
   output: {
     path: __dirname + "/example",

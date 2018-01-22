@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {PathLine} from '../index'
 
-export const App = () => (
+export const Example = () => (
     <div style={{paddingLeft:'100px'}}>
         <svg width="300" height="300" style={{paddingTop: '10px'}}>
             <polyline 
@@ -25,7 +25,6 @@ export const App = () => (
 );
 
 ReactDOM.render(
-  <App>
-  </App>,
-  document.getElementById('example-container')
+    <Example />,
+    document.getElementById('root'),
 )
